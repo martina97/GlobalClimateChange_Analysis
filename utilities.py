@@ -29,9 +29,22 @@ def chooseMonth():
 
     return int(month)
 
+def chooseCityCountry(myList, title):
+    
+    noRep_myList = set(myList)
+    
+    print("Choose one "+title+" among those listed below: \n",noRep_myList)
+    print("\nInsert "+title+": ")
+    chosenValue = input()
+    
+    while chosenValue not in noRep_myList:
+        print("Insert valid "+title+": ")
+        chosenValue = input()
+
+    return chosenValue
 
 def chooseRandom(myList, title):
-
+    
     myList = list(set(myList))
     value = choice(myList)
     #print("Randomly choosen ",title," : ", value)
